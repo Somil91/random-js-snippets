@@ -12,6 +12,9 @@ function merge(arr1, arr2) {
     var result = [];
     while(arr1.length && arr2.length){
         var minElem;
+         // sortedLeft's first element comes next
+        // if it's less than sortedRight's first
+        // element or if sortedRight is empty
         if(arr1[0] < arr2[0]) minElem = arr1.shift();
         else minElem = arr2.shift();
         result.push(minElem);
