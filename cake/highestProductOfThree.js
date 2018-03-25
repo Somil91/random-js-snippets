@@ -11,20 +11,14 @@ function getMaxProductOfThree(arr) {
     } else if( arr.length === 3) {
         return arr[0]*arr[1]*arr[2];
     } else {
-        let maxArr = [arr[0], arr[1], arr[2]];
-        let maxProductTillNow = maxArr[0]* maxArr[1] * maxArr[2];
+        let maxArr = [arr[0], arr[1]];
+        let lowArr = [arr[0], arr[1]];
+        let maxProductTillNow = maxArr[0]* maxArr[1];
+        let lowProductTillNow = maxArr[0]* maxArr[1];
         console.log('Initial Max ', maxArr, maxProductTillNow);
+        console.log('Initial Low ', maxArr, maxProductTillNow);
 
-        for(let i = 3 ; i < arr.length ; i ++ ) {
-            if(arr[i]*maxArr[1]*maxArr[2] > maxProductTillNow) {
-                maxProductTillNow = arr[i]*maxArr[1]*maxArr[2]
-            }
-            if(maxArr[0]*arr[i]*maxArr[2] > maxProductTillNow) {
-                maxProductTillNow = maxArr[0]*arr[i]*maxArr[2] 
-            }
-            if(maxArr[0]*maxArr[1]*arr[i] > maxProductTillNow) {
-                maxProductTillNow = maxArr[0]*arr[i]*maxArr[2] 
-            }
+        for(let i = 2 ; i < arr.length ; i ++ ) {
 
             // maxProductTillNow = maxArr[0]* maxArr[1] * maxArr[2];
             console.log('Intermediate Max', maxArr, maxProductTillNow);

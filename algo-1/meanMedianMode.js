@@ -1,3 +1,8 @@
+/** Now this approach is using just in time compilation ; i.e on demand
+ * There is way to compute this in O(1) complexity with using the 0(n) space complexity : greedy approach / ahead of time compilation
+ * Check second approach in cake folder : meanMedianMode.
+ */
+
 function getMean(arr) {
     var reducer = (accumulator, currentValue) => accumulator + currentValue;
     return arr.reduce(reducer)/arr.length;
@@ -51,3 +56,5 @@ function getMeanMedianMode(arr) {
 }
 
 console.log('mean', getMeanMedianMode([1, 2, 3,4,5,4,6,1]));
+
+
