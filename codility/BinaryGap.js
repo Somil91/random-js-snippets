@@ -15,3 +15,47 @@ Write an efficient algorithm for the following assumptions:
 
 N is an integer within the range [1..2,147,483,647].
  */
+
+
+ //Solution 
+
+
+const decimal2Binary = (number) => {
+    return Number(number).toString(2);
+  }
+  
+  const solution = function(number) {
+    const binary = decimal2Binary(number);
+    console.log(` no is ::: ${binary}`);
+    let curr = 0 , maxlength = 0 , flag = false;
+    let i = 0;
+    while(i < binary.length) {
+      if(binary.charAt(i) === '0'){
+        curr ++;
+      } else if(maxlength < curr) {
+        maxlength  = curr ;
+        curr = 0;
+  //       i++ ;
+        flag = true;
+        } else {
+          curr = 0;
+        }
+      i++;
+    }
+    
+    if(flag) {
+      return maxlength;
+    } else 
+      return 0;
+  }
+  
+  console.log(`Binary gap is : ${solution(9)}`)
+  console.log(`Binary gap is : ${solution(529)}`)
+  console.log(`Binary gap is : ${solution(74901729)}`)
+  console.log(`Binary gap is : ${solution(1376796946)}`)
+  console.log(`Binary gap is : ${solution(66561)}`)
+  console.log(`Binary gap is : ${solution(328)}`)
+  // console.log(`Binary gap is : ${solution(66561)}`)
+  // console.log(`Binary gap is : ${solution(74901729)}`)
+  //console.log(decimal2Binary(9))
+
